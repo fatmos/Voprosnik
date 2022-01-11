@@ -15,23 +15,30 @@ class MainActivity : AppCompatActivity() {
         val button3 = findViewById<Button>(R.id.button3)
 
         button.setOnClickListener {
-            Toast.makeText(applicationContext,"CORRECT!",Toast.LENGTH_SHORT).show()
+            showToast(1)
         }
 
         button2.setOnClickListener {
-            Toast.makeText(applicationContext, "WRONGO!", Toast.LENGTH_SHORT).show()
+            showToast(2)
+
         }
 
         button3.setOnClickListener {
-            Toast.makeText(applicationContext, "WRONGO!", Toast.LENGTH_SHORT).show()
+            showToast(3)
+
         }
 
+
+
+        }
+    fun showToast(answer : Int) {
+        if ( answer == 1 ) {
+            Toast.makeText(applicationContext, "Correctno", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(applicationContext,"Неправильно",Toast.LENGTH_SHORT).show()
+        }
     }
-
-
-
-
-
 
 
 }
