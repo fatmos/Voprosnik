@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     fun updateQuestion() {
         voprosNo += 1
-        if (voprosNo >3 && (rightAnswers.get(voprosNo)==3 || rightAnswers.get(voprosNo)==2)) { //Зацикленные вопросы
+        if (voprosNo >3 ) { //Зацикленные вопросы
             voprosNo =0
         }
         /*else if (voprosNo >3){
