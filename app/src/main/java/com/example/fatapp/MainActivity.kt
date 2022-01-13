@@ -52,6 +52,9 @@ class MainActivity : AppCompatActivity() {
 
     fun updateQuestion() {
         voprosNo += 1
+        if (voprosNo >3) { //Зацикленные вопросы
+            voprosNo =0
+        }
         findViewById<TextView>(R.id.textView).setText(vopros.get(voprosNo))
     }
 
