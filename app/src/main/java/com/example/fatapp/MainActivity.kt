@@ -9,7 +9,7 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
     var voprosNo = 0
 
-    var vopros = listOf("What are the two official languages for Android development? \n\n A) Kotlin and Java \n\n B) Java and Python \n\n C) Kotlin and Python", "How do you define a function in Kotlin? \n\n A) void \n\n B) var \n\n C) function", "What is a variable used for? \n\n A) To contain data \n\n B) To insert a random value \n\n C) Don't know", "What does SDK stand for in Android SDK? \n\n A) Software Development Kit \n\n B) Software Development Kotlin \n\n C) Something Don't Know")
+    var vopros = listOf("Ты женат? \n\n A) Нет \n\n B) Да \n\n C) Есть партнёр", "Занимаешься спортом? \n\n A) Нет \n\n B) Да \n\n C) Раз в год", "Есть стресс? \n\n A)Нет \n\n B) Да \n\n C) Не замечал", "200 рсп или Ро? \n\n A) РО \n\n B) 200 РСП \n\n C) Чужих женщин не бывает")
 
     var rightAnswers = listOf(1, 2, 1, 1)
 
@@ -52,10 +52,16 @@ class MainActivity : AppCompatActivity() {
 
     fun updateQuestion() {
         voprosNo += 1
-        if (voprosNo >3) { //Зацикленные вопросы
+        if (voprosNo >3 && (rightAnswers.get(voprosNo)==3 || rightAnswers.get(voprosNo)==2)) { //Зацикленные вопросы
             voprosNo =0
         }
-        findViewById<TextView>(R.id.textView).setText(vopros.get(voprosNo))
+        /*else if (voprosNo >3){
+            */
+
+        else {
+            findViewById<TextView>(R.id.textView).setText(vopros.get(voprosNo))
+        }
+
     }
 
 
