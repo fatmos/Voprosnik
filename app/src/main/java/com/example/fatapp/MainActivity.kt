@@ -1,5 +1,6 @@
 package com.example.fatapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     var rightAnswers = listOf(1, 2, 1, 1)
 
+    //var text1 = findViewById<TextView>(R.id.textView)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button)
         val button2 = findViewById<Button>(R.id.button2)
         val button3 = findViewById<Button>(R.id.button3)
+
+
 
         button.setOnClickListener {
             showToast(1)
@@ -34,10 +39,8 @@ class MainActivity : AppCompatActivity() {
             showToast(3)
 
         }
-
-
-
     }
+
 
     fun showToast(answer : Int) {
         if ( answer == rightAnswers.get(voprosNo)) {
@@ -52,23 +55,22 @@ class MainActivity : AppCompatActivity() {
 
     fun updateQuestion() {
         voprosNo += 1
-        if (voprosNo >3 ) { //Зацикленные вопросы
+        if (voprosNo >3 ) {
+            SecondActivity()
             voprosNo =0
+
+
         }
         /*else if (voprosNo >3){
             */
-
         else {
+
             findViewById<TextView>(R.id.textView).setText(vopros.get(voprosNo))
         }
 
     }
-
-
-
-
-
-
-
-
+    private fun SecondActivity(){
+        val intent = Intent(this,SecondActivity::class.java)
+        startActivity(intent)
+    }
 }

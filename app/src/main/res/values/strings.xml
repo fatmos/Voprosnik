@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FatApp</string>
+    <string name="perstren">\tПоздравляю!\n \n Вы ответили на все вопросы , \n для вас загружается \n персональный \n план тренировок.</string>
+    <string name="textview3">\t \t Вы ответили на все вопросы ,\n \t \t подождите немного .</string>
+    <string name="textView">Нажми на А</string>
 </resources>
